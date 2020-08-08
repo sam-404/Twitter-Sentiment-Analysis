@@ -22,7 +22,7 @@ def message_cleaning(message):
     Test_punc_removed_join_clean = [word for word in Test_punc_removed_join.split() if word.lower() not in stopwords.words('english')]
     return Test_punc_removed_join_clean
 
-# Define the cleaning pipeline we defined earlier
+# Define the cleaning pipeline 
 vectorizer = CountVectorizer(analyzer = message_cleaning)
 tweets_countvectorizer = CountVectorizer(analyzer = message_cleaning, dtype = 'uint8').fit_transform(tweets_df['tweet'])
 #print(tweets_countvectorizer.shape)
